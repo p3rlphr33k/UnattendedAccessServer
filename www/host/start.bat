@@ -1,0 +1,1 @@
+setup.exe -autoreconnect 5  -noauto -64colors -encoding tight -proxy supervene.com::5500 ID:75843

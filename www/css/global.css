@@ -1,0 +1,37 @@
+body {
+        background-color:#FFFFFF;
+		font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+        /*background-color:#BBBBBB;*/
+        /*background: #FFF URL('../images/bg.gif') repeat-x;*/
+        }
+
+.evenRow {
+        background-color:#fff;}
+
+.oddRow {
+        background-color:#EEEEEE;}
+
+.evenRow:hover, .oddRow:hover {
+        cursor:pointer;
+        background-color: #56A5EC;}
+
+.username_box {
+/*background: #FFF URL('../images/username-bg.jpg') no-repeat;*/
+width:300px;
+padding:5px;
+}
+
+.password_box {
+/*background: #FFF URL('../images/password-bg.jpg') no-repeat;*/
+width:300px;
+padding:5px;
+}
+
+.username_box:focus {
+background-image: none;
+}
+
+.password_box:focus {
+background-image: none;
+}
+

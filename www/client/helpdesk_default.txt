@@ -1,0 +1,40 @@
+[TITLE]
+Supervene Remote Support
+
+[HOST]
+Connect 
+ -id ::ID:: -connect ::IP::::::PORT:: -noregistry
+
+[DIRECT]
+
+[DIS_UAC]
+
+[TEXTMIDDLE]
+Loading ...
+
+[BALLOON1TITLE]
+Contacting ::REP::...
+
+[BALLOON1A]
+Attempting to contact ::REP::
+
+[BALLOON1B]
+If it fails, the software will remove itself
+
+[BALLOON1C]
+automatically...
+
+[BALLOON2TITLE]
+Waiting for ::REP::...
+
+[BALLOON2A]
+Your session will begin when the ::REP:: accepts your request.
+
+[BALLOON2B]
+
+
+[BALLOON2C]
+
+
+[WEBPAGE]
+https://supervene.com

@@ -1,0 +1,7 @@
+wget p7zip_9.20.1_x86_linux_bin.tar.bz2
+
+tar -xf p7zip_9.20.1_x86_linux_bin.tar.bz2
+
+cd p7zip*
+
+./install.sh

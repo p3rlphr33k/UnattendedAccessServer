@@ -1,0 +1,40 @@
+[TITLE]
+Supervene Remote Support
+
+[HOST]
+Connect 
+ -id 279408 -connect supervene.com::5500 -noregistry
+
+[DIRECT]
+
+[DIS_UAC]
+
+[TEXTMIDDLE]
+Loading ...
+
+[BALLOON1TITLE]
+Contacting support specialist...
+
+[BALLOON1A]
+Attempting to contact support specialist
+
+[BALLOON1B]
+If it fails, the software will remove itself
+
+[BALLOON1C]
+automatically...
+
+[BALLOON2TITLE]
+Waiting for support specialist...
+
+[BALLOON2A]
+Your session will begin when the support specialist accepts your request.
+
+[BALLOON2B]
+
+
+[BALLOON2C]
+
+
+[WEBPAGE]
+https://supervene.com

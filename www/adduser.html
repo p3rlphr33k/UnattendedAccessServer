@@ -1,0 +1,45 @@
+<link href="/it/css/form.css" rel="stylesheet" type="text/css" />
+<p>
+<form class="contact_form" action="/cgi-bin/it/itdept.pl" method="post" id="contact_form" name="contact_form">
+<input type="hidden" name="do" value="adduser">
+    <ul>
+        <li>
+             <h2>Add User</h2>
+             <span class="required_notification">* Denotes Required Field</span>
+        </li>
+        <li>
+            <input type="text" name="fname" placeholder="First Name" required />
+        </li>
+		        <li>
+            <input type="text" name="lname" placeholder="Last Name" required />
+        </li>
+		        <li>
+            <input type="text" name="uname" placeholder="Username  (Optional)" />
+			<span class="form_hint">GFPL is format first initial plus last name: John Doe = jdoe</span>
+        </li>
+		<li>
+            <input type="text" name="password" placeholder="Password  (Optional)"/>
+        </li>
+        <li>
+            <input type="text" name="email" placeholder="john_doe@example.com  (Optional)" />
+            <span class="form_hint">Proper format "name@something.com"</span>
+        </li>
+        <li>
+            <input type="text" name="device" placeholder="PC Name (Optional)"/>
+        </li>
+		<li>
+            <input type="text" name="pin" placeholder="Pin Number (Optional)"/>
+        </li>
+		<li>
+            <input type="text" name="enum" placeholder="Employee Number (Optional)"/>
+        </li>
+		<li>
+            <input type="text" name="dept" placeholder="Department (Optional)"/>
+        </li>
+        <li>
+        	<button class="submit" type="button" onClick="plax.submit('/cgi-bin/it/itdept.pl','users','contact_form');">Add User</button>
+			<button class="submit" type="button" onClick="plax.update('/cgi-bin/it/itdept.pl?do=users','users');">Cancel</button>
+        </li>
+    </ul>
+   </form>
+</p>

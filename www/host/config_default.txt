@@ -1,0 +1,5 @@
+;!@Install@!UTF-8!
+Title="Supervene Remote Support"
+;BeginPrompt=""
+RunProgram="setup.exe -shared -fullscreen -nostatus -autoreconnect 5 -noauto -32colors -encoding tight -proxy ::IP::::::PORT:: ID:::ID::"
+;!@InstallEnd@!

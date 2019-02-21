@@ -1,0 +1,83 @@
+<link href="/it/css/form.css" rel="stylesheet" type="text/css" />
+<p>
+<form class="contact_form" action="/cgi-bin/it/itdept.pl" method="post" id="device_form" name="contact_form">
+<input type="hidden" name="do" value="adddevice">
+    <ul>
+        <li>
+             <h2>Add Device</h2>
+             <span class="required_notification">* Denotes Required Field</span>
+        </li>
+        <li>
+            <input type="text" name="dname" placeholder="Device Name" required />
+			<span class="form_hint">Device Name</span>
+        </li>
+		        <li>
+            <input type="text" name="mac" placeholder="MAC Address" />
+			<span class="form_hint">Mac Address: "<i>XX:XX:XX:XX:XX:XX</i>"</span>
+        </li>
+		        <li>
+            <input type="text" name="switch" placeholder="Switch IP" />
+			<span class="form_hint">Switch IP</span>
+        </li>
+		<li>
+            <input type="text" name="port" placeholder="Switch Port"/>
+			<span class="form_hint">Switch Port: "<i>G7</i>", "<i>E20</i>", "<i>SFP2</i>", etc.</span>
+        </li>
+		<li>
+            <input type="text" name="trunk" placeholder="Switch Trunk"/>
+			<span class="form_hint">Switch Trunk: "<i>GE1</i>", "<i>GE2</i>", "<i>GE3</i>"</span>
+        </li>
+        <li>
+            <input type="text" name="panel" placeholder="Patch Panel" />
+            <span class="form_hint">Patch Panel Number</span>
+        </li>
+        <li>
+            <input type="text" name="fo" placeholder="Fail Over Port"/>
+			<span class="form_hint">Fail over port on the switch</span>
+        </li>
+		<li>
+            <input type="text" name="ip" placeholder="Device IP Address"/>
+			<span class="form_hint">IP Address: xxx.xxx.xxx.xxx</span>
+        </li>
+		<li>
+            <input type="text" name="uname" placeholder="Username"/>
+			<span class="form_hint">Device Username</span>
+        </li>
+		<li>
+            <input type="text" name="password" placeholder="Password"/>
+			<span class="form_hint">Device Password</span>
+        </li>
+		<li>
+            <input type="text" name="url" placeholder="Management Address"/>
+			<span class="form_hint">Management Address/URL</span>
+        </li>
+		<li>
+            <input type="text" name="barcode" placeholder="Inventory Barcode"/>
+			<span class="form_hint">GFPL Inventory Barcode</span>
+        </li>
+		<li>
+            <input type="text" name="sn" placeholder="Item Serial Number"/>
+			<span class="form_hint">Item Serial Number</span>
+        </li>
+		<li>
+            <input type="text" name="added" placeholder="Date Added"/>
+			<span class="form_hint">Date Added: MM/DD/YYYY</span>
+        </li>
+		<li>
+            <input type="text" name="cost" placeholder="Device Cost"/>
+			<span class="form_hint">Device Cost: $xxx.xx or $xxx</span>
+        </li>
+		<li>
+            <input type="text" name="withdrawn" placeholder="Withdrawn Date"/>
+			<span class="form_hint">Withdrawn Date: MM/DD/YYYY</span>
+        </li>
+		<li>
+            <textarea name="description" cols="40" rows="6" placeholder="Item description or notes."></textarea>
+        </li>
+        <li>
+        	<button class="submit" type="button" onClick="plax.submit('/cgi-bin/it/itdept.pl','devices','device_form');">Add Device</button>
+			<button class="submit" type="button" onClick="plax.update('/cgi-bin/it/itdept.pl?do=devices','devices');">Cancel</button>
+        </li>
+    </ul>
+   </form>
+</p>
