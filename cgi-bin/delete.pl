@@ -48,12 +48,12 @@ if($session eq $enc) {
         $sth2->execute("$mid") or die $DBI::errstr;
 	$sth2->finish();
 
-	print "Location: /cgi-bin/rs/clients.pl?acctid=$id&session=$session\n\n";
+	print "Location: /cgi-bin/clients.pl?acctid=$id&session=$session\n\n";
 }
 
 else {
         $err = "Invalid login.";
-	print "Location: /cgi-bin/rs/LoginForm.pl?err=$err\n\n";
+	print "Location: /cgi-bin/LoginForm.pl?err=$err\n\n";
 }
 
 $dbh->disconnect();

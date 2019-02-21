@@ -46,20 +46,20 @@ if($acctid && $md5hash) {
 	#print "email: $email<br>\npassword: $password<br>\n";
 	if($acctid eq $email && $md5hash eq $password) {
 		$session = md5_hex("$email$password");
-		print "Location: /cgi-bin/rs/clients.pl?acctid=$id&session=$session\n\n";
+		print "Location: /cgi-bin/clients.pl?acctid=$id&session=$session\n\n";
 	}
 	else {
 		$err = "Invalid login.";
-		print "Location: /cgi-bin/rs/LoginForm.pl?err=$err\n\n";
+		print "Location: /cgi-bin/LoginForm.pl?err=$err\n\n";
 	}
 }
 else {
 	if($acctid && $session) {
 		$session = md5_hex("$session");
-                print "Location: /cgi-bin/rs/clients.pl?acctid=$id&session=$session\n\n";	
+                print "Location: /cgi-bin/clients.pl?acctid=$id&session=$session\n\n";	
 	}
 	else {
 		$err = "Invalid login.";
-		print "Location: /cgi-bin/rs/LoginForm.pl?err=$err\n\n";
+		print "Location: /cgi-bin/LoginForm.pl?err=$err\n\n";
 	}
 }

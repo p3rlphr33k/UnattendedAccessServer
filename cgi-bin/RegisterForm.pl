@@ -26,7 +26,7 @@ print qq~
 <html lang="en-US">
 <!--<![endif]-->
 <head>
-<title>Supervene Remote Support Login</title>
+<title>Remote Support Login</title>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -44,7 +44,7 @@ print qq~
 <!--[if lte IE 8]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<link href="/rs/css/global.css" rel="stylesheet" type="text/css" />
+<link href="/css/global.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 .barColor {
 	background: #0099FF;
@@ -105,7 +105,7 @@ h1 {
 }
 </style>
 
-<script language="javascript" type="text/javascript" src="/rs/scripts/md5.js"></script>
+<script language="javascript" type="text/javascript" src="/scripts/md5.js"></script>
 <script language="javascript">
 
 
@@ -157,7 +157,7 @@ function validateLogin()
 
 </head>
 <body style="padding:0px;margin:0px;">
-<form action="/cgi-bin/rs/register.pl" method="post" id="loginForm" onsubmit="return validateLogin();">
+<form action="/cgi-bin/register.pl" method="post" id="loginForm" onsubmit="return validateLogin();">
 
 <div id="wrapper">
 <table border="0" cellpadding="0" cellspacing="0" style="border:1px #696969 solid;background:#FFF;width:400px;margin-top:auto;margin-left:auto;margin-right:auto;margin-left:auto;border-radius:10px;box-shadow:0 0 10px rgba(33, 33, 33, 0.95);">
@@ -167,7 +167,7 @@ function validateLogin()
 	<table border="0" cellpadding="3" cellspacing="3" style="padding:0px;">
 	<tr>
 		<td align="center">
-		<img src="http://supervene.com/i/finalize.png">
+		<img src="logo.png">
 		<h1>Remote Access</h1>
 		</td>
 	</tr>
@@ -206,7 +206,7 @@ print qq~
 		</td>
 	</tr>
 
-	<tr><td colspan="2" align="center"><span style="font-family:verdana;font-size:small;">Already have an account? <a href="http://supervene.com/rs/login.html" target="new">Login</a></span></td></tr>
+	<tr><td colspan="2" align="center"><span style="font-family:verdana;font-size:small;">Already have an account? <a href="/login.html" target="new">Login</a></span></td></tr>
 	</table>
 	
 	</td>

@@ -69,6 +69,7 @@ if($session && $session eq $compare){
 
 print "Content-Type: Text/HTML\n\n";
 
+# move this to template.pl
 print qq~
 <!DOCTYPE html>
 <html lang="en-us">
@@ -202,21 +203,21 @@ header {
 #logo { float:left; margin:7px; }
 #account { float:right; margin:10px; }
 </style>
-<link rel="stylesheet" href="http://supervene.com/rs/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
 </head>
 <body>
 <header id="header">
 	<div id="logo">
-	<img src="http://supervene.com/i/finalize.png">
+	<img src="/logo.png">
 	</div>
 
 	<div id="account">
-		<!--small>Member Since: $created</small>&emsp;
-		<small>Last Login: $updated</small>&emsp;-->
-		<a href="/cgi-bin/rs/clients.pl?acctid=$acctid&session=$session" class="btn2"><i class="fa fa-refresh"></i> Refresh</a>&emsp;
-		<a href="http://supervene.com/rs/SuperveneRemoteAccessSetup-v1.0.exe" class="btn2"><i class="fa fa-plus-square-o"></i> Add Computer</a>&emsp;
+		<small>Member Since: $created</small>&emsp;
+		<small>Last Login: $updated</small>&emsp;
+		<a href="/cgi-bin/clients.pl?acctid=$acctid&session=$session" class="btn2"><i class="fa fa-refresh"></i> Refresh</a>&emsp;
+		<a href="/SuperveneRemoteAccessSetup-v1.0.exe" class="btn2"><i class="fa fa-plus-square-o"></i> Add Computer</a>&emsp;
 		<a href="javascript:alert('Settings coming soon.');" class="btn2"><i class="fa fa-cogs"></i> $email</a>&emsp;
-		<a href="/cgi-bin/rs/login.pl?acctid=$acctid&session=logoff" class="btn2"><i class="fa fa-sign-out"></i> Logout</a>
+		<a href="/cgi-bin/login.pl?acctid=$acctid&session=logoff" class="btn2"><i class="fa fa-sign-out"></i> Logout</a>
 	</div>
 </header>
 
@@ -227,8 +228,6 @@ header {
 &FetchOfflineMachines;
 &pccounter;
 
-# http://supervene.com/rs/novnc/vnc.html?host=supervene.com&port=6080&encrypt=0&true_color=0&repeaterID=ID:$sessionID&logging=error
-
 print qq~
 </body>
 </html>
@@ -236,7 +235,7 @@ print qq~
 }
 else {
 $err = "Invalid Login.";
-print "Location: /cgi-bin/rs/LoginForm.pl?err=$err\n\n";
+print "Location: /cgi-bin/LoginForm.pl?err=$err\n\n";
 }
 
 ################################################################
@@ -291,7 +290,7 @@ print qq~
 		<tr>
 		
 			<td>
-			<img src="http://supervene.com/rs/img/modern2.jpg" width="100px" height="65px">
+			<img src="/img/modern2.jpg" width="100px" height="65px">
 			</td>
 	
 			<td>
@@ -306,7 +305,7 @@ print qq~
 			
 			<td >
 			<div  class="btnD">
-			<a href="/cgi-bin/rs/delete.pl?acctid=$acctid&session=$session&mid=$mid">
+			<a href="/cgi-bin/delete.pl?acctid=$acctid&session=$session&mid=$mid">
 			<img src="http://supervene.com/rs/img/delete.png" width="50px" height="50px">
 			</a>
 			</div>
@@ -331,25 +330,25 @@ print qq~
 		<tr>
 		
 			<td>
-			<img src="http://supervene.com/rs/img/modern.jpg" width="100px" height="65px">
+			<img src="/img/modern.jpg" width="100px" height="65px">
 			</td>
 	
 			<td>
-			PC Name: <a href="http://supervene.com/cgi-bin/rs/connect.pl?id=$hostname&session=$vncnum&acctid=$acctid" target="remote">$hostname</a>
+			PC Name: <a href="/cgi-bin/connect.pl?id=$hostname&session=$vncnum&acctid=$acctid" target="remote">$hostname</a>
 			<br>
 			Last Communication: <i>$updated</i>
 			</td>
 			
 			<td>
-			<a href="http://supervene.com/cgi-bin/rs/connect.pl?id=$hostname&session=$vncnum&acctid=$acctid" target="remote">
+			<a href="/cgi-bin/connect.pl?id=$hostname&session=$vncnum&acctid=$acctid" target="remote">
 			<div class="btn" onClick="">Connect</div>
 			</a>
 			</td>	
 			
 			<td >
 			<div  class="btnD">
-			<a href="/cgi-bin/rs/delete.pl?acctid=$acctid&session=$session&mid=$mid">
-			<img src="http://supervene.com/rs/img/delete.png" width="50px" height="50px">
+			<a href="/cgi-bin/delete.pl?acctid=$acctid&session=$session&mid=$mid">
+			<img src="/img/delete.png" width="50px" height="50px">
 			</a>
 			</div>
 			</td>

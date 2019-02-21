@@ -17,7 +17,7 @@ foreach $kv (@in) {
 }
 
 if($sessionKey && $sessionKey ne '') {
-	open(HostHandle, "< /var/www/www.supervene.com/web/rs/host/config_default.txt") or die $!;
+	open(HostHandle, "< /var/www/html/host/config_default.txt") or die $!;
 	@HostConfig  = <HostHandle>;
 	close(HostHandle);
 	
@@ -27,7 +27,7 @@ if($sessionKey && $sessionKey ne '') {
 		$line =~ s/::ID::/$sessionKey/;
 	}
 	
-	open(HostFile, "> /var/www/www.supervene.com/web/rs/host/config.txt") or die $!;
+	open(HostFile, "> /var/www/html/host/config.txt") or die $!;
 	print HostFile @HostConfig;
 	close(HostFile);
 
@@ -36,9 +36,9 @@ if($sessionKey && $sessionKey ne '') {
 	#$FILE7Z = $config::FILE7Z;
 	
 	@cmds = (
-		"cat /var/www/www.supervene.com/web/rs/support/7zS.sfx /var/www/www.supervene.com/web/rs/host/config.txt /var/www/www.supervene.com/web/rs/host/vncviewer.7z > $TMP/h$sessionKey.exe",
+		"cat /var/www/html/support/7zS.sfx /var/www/html/host/config.txt /var/www/html/host/vncviewer.7z > $TMP/h$sessionKey.exe",
 		"chmod 0777 $TMP/c$sessionKey.exe",
-		"cp $TMP/h$sessionKey.exe /var/www/www.supervene.com/web/rs/built/",
+		"cp $TMP/h$sessionKey.exe /var/www/html/built/",
 		"rm $TMP/h$sessionKey.exe"
 	);
 	
@@ -46,12 +46,12 @@ if($sessionKey && $sessionKey ne '') {
 		$ret = `$cmd`;
 	}
 	
-	if(-e "/var/www/www.supervene.com/web/rs/built/h$sessionKey.exe") {
+	if(-e "/var/www/html/built/h$sessionKey.exe") {
 
 		print "Content-Type:application/octet-stream\n";
 		print "Content-Disposition:attachment;filename=$FILENAME\n\n";
 
-		open(DOWNLOAD, "< /var/www/www.supervene.com/web/rs/built/h$sessionKey.exe") or die "can't open : $!";
+		open(DOWNLOAD, "< /var/www/html/built/h$sessionKey.exe") or die "can't open : $!";
 		binmode DOWNLOAD;
 		local $/ = \10240;
 		while (<DOWNLOAD>){
@@ -60,9 +60,9 @@ if($sessionKey && $sessionKey ne '') {
 		close DOWNLOAD;   
 	}
 	else {
-		print "Location: /rs/error.html\n\n";
+		print "Location: /error.html\n\n";
 	}
 }
 else {
-	print "Location: /rs/error.html\n\n";
+	print "Location: /error.html\n\n";
 }

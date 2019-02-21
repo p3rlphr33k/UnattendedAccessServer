@@ -31,7 +31,6 @@ foreach $kv (@in){
 	#print "$k = $v<br>";
 }
 
-
 if($session && $acctid && $id) {
 $MyCMD1 = "UPDATE machines SET command=? WHERE account=? AND hostname=? LIMIT 1";
 
@@ -53,6 +52,7 @@ $sth1->finish();
 ## CLOSE SQL CONNECTIONS
 $dbh->disconnect();
 
+# NEED TO GENERATE THIS VARIABLE DYNAMICALLY!
 $connectString = "https://supervene.com/rs/novnc/vnc.html?host=supervene.com&port=6080&encrypt=1&logging=debug&true_color=0&stylesheet=default&clip=true&resize=scale&cursor=true&shared=true&repeaterID=ID:$session";
 $q = new CGI;
 print $q->redirect($connectString);
@@ -61,6 +61,7 @@ print $q->redirect($connectString);
 else {
 print "Content-Type: Text/HTML\n\n";
 
+# MOVE THIS TO TEMPLATE.HTML
 print qq|
 <!DOCTYPE html>
 <html lang="en-us">
